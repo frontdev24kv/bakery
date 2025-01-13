@@ -1,15 +1,50 @@
+@font-face {
+  font-display: swap;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../fonts/poppins-v22-latin-300.woff2') format('woff2');
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/poppins-v22-latin-regular.woff2') format('woff2');
+}
+@font-face {
+  font-display: swap; 
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/poppins-v22-latin-600.woff2') format('woff2');
+}
+@font-face {
+  font-display: swap; 
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../fonts/poppins-v22-latin-900.woff2') format('woff2');
+}
+
 :root {
-  --color-primary-light: #FAF4EA;
-  --color-primary-dark: #31261A;
-  --color-brand-light: #819B57;
+  --color-primary-light: #faf4ea;
+  --color-primary-dark: #31261a;
+  --color-brand-light: #819b57;
   --color-brand-dark: #465929;
-  --color-secondary-light: #CFCFBC;
-  --color-secondary-pink: #A18268;
+  --color-secondary-pink: #a18268;
+  /* --color-secondary-light: #cfcfbc;
+   */
 }
 
 /* base */
 body {
   color: var(--color-primary-dark);
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5;
 }
 ul {
   list-style-type: none;
@@ -18,6 +53,7 @@ ul {
 /* button */
 .button {
   color: var(--color-primary-light);
+  font-weight: 600;
   background-color: var(--color-brand-light);
   border: 2px solid var(--color-brand-light);
   border-radius: 8px;
@@ -31,28 +67,101 @@ ul {
 /* link */
 .link {
   color: var(--color-primary-light);
+  text-decoration: none;
 }
 
 .link:hover {
   color: var(--color-brand-light);
+  font-weight: 600;
+}
+
+/* address */
+address {
+  font-style: normal;
+}
+
+/* section base */
+.title-section {
+  font-size: 64px;
+  font-weight: 900;
+  line-height: 1.3;
+}
+
+.text-center {
+  text-align: center;
 }
 
 /* hero section */
 .hero-title {
-  color: var(--color-primary-light)
+  color: var(--color-primary-light);
+  font-size: 128px;
+  text-align: center;
 }
 
 .accent {
   color: var(--color-brand-light);
+  font-weight: 600;
+}
+
+.upper-text {
+  text-transform: uppercase;
 }
 
 /* advantages section */
 .advantages-list {
   color: var(--color-primary-light);
+  font-size: 20px;
+  font-weight: 300;
   background-color: var(--color-brand-light);
 }
 
 /* chefs section */
 .chef-span {
   color: var(--color-brand-dark);
+}
+
+.chef-title {
+  font-size: 40px;
+  font-weight: 600;
+}
+
+/* formats section */
+#formats-section {
+ background-color: gold;
+}
+
+.format-title {
+  color: var(--color-primary-light);
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.format-text {
+  color: var(--color-primary-light);
+  font-size: 14px;
+  font-weight: 300;
+}
+
+/* footer */
+footer{
+  background-color: gold;
+}
+
+.address-link {
+  color: var(--color-primary-light);
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.confident-link {
+  color: var(--color-primary-light);
+  font-size: 16px;
+  font-weight: 300;
+  text-decoration: none;
+}
+
+.copyrights {
+  color: var(--color-secondary-pink);
+  font-size: 14px;
+  font-weight: 400;
 }
