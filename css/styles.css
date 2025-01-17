@@ -13,14 +13,14 @@
   src: url('../fonts/poppins-v22-latin-regular.woff2') format('woff2');
 }
 @font-face {
-  font-display: swap; 
+  font-display: swap;
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 600;
   src: url('../fonts/poppins-v22-latin-600.woff2') format('woff2');
 }
 @font-face {
-  font-display: swap; 
+  font-display: swap;
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 900;
@@ -30,32 +30,63 @@
 :root {
   --color-primary-light: #faf4ea;
   --color-primary-dark: #31261a;
-  --color-brand-light: #819b57;
+  --color-brand-normal: #819b57;
   --color-brand-dark: #465929;
   --color-secondary-pink: #a18268;
+  --color-secondary-grey: #D9D9D9;
   /* --color-secondary-light: #cfcfbc;
    */
 }
 
 /* base */
+* {
+  box-sizing: border-box;
+}
+
 body {
   color: var(--color-primary-dark);
+  background-color: var(--color-primary-light);
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
   font-weight: 400;
   font-style: normal;
   line-height: 1.5;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+}
+
 ul {
+  padding: 0;
+  margin: 0;
   list-style-type: none;
+}
+
+section {
+  border: 1px solid black;
+}
+
+.container {
+  width: 100%;
+  max-width: 1288px;
+  padding: 0 24px;
+  margin: 0 auto;
 }
 
 /* button */
 .button {
+  padding: 16px 32px;
   color: var(--color-primary-light);
   font-weight: 600;
-  background-color: var(--color-brand-light);
-  border: 2px solid var(--color-brand-light);
+  background-color: var(--color-brand-normal);
+  border: 2px solid var(--color-brand-normal);
   border-radius: 8px;
   cursor: pointer;
 }
@@ -71,8 +102,7 @@ ul {
 }
 
 .link:hover {
-  color: var(--color-brand-light);
-  font-weight: 600;
+  color: var(--color-brand-normal);
 }
 
 /* address */
@@ -81,6 +111,9 @@ address {
 }
 
 /* section base */
+.section {
+  padding: 48px 0;
+}
 .title-section {
   font-size: 64px;
   font-weight: 900;
@@ -91,15 +124,49 @@ address {
   text-align: center;
 }
 
+/* header */
+header {
+  background-color: grey;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  gap: 40px;
+}
+
+.header-list {
+  display: flex;
+  justify-content: center;
+  gap: 64px;
+  flex-grow: 1;
+}
+
 /* hero section */
+.hero-section {
+  padding: 272px 0;
+  background-image: url(../images/image_bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+}
+
 .hero-title {
   color: var(--color-primary-light);
   font-size: 128px;
   text-align: center;
+  margin-bottom: 0;
 }
 
 .accent {
-  color: var(--color-brand-light);
+  color: var(--color-brand-normal);
   font-weight: 600;
 }
 
@@ -108,14 +175,69 @@ address {
 }
 
 /* advantages section */
-.advantages-list {
-  color: var(--color-primary-light);
-  font-size: 20px;
-  font-weight: 300;
-  background-color: var(--color-brand-light);
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
+/* .advantages {
+  padding-top: 0;
+} */
+
+.advantages-section {
+  color: var(--color-primary-light);
+  background-color: var(--color-brand-normal);
+  font-size: 20px;
+  font-weight: 300;
+  padding: 16px 0;
+}
+
+.advantages-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* tradition section */
+.traditions-container {
+  display: flex;
+  gap: 53px;
+}
+.tradition-title {
+  margin-bottom: 42px;
+  color: var(--color-secondary-grey);
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25), 1px 1px 0 #000, -1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000;
+  /* text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-text-stroke: 1px black; */
+}
+
+.traditions-text {
+  max-width: 335px;
+}
 /* chefs section */
+.chef-photo {
+  border-radius: 4px 4px 4px 200px;
+  box-shadow: -16px 16px 0 0 var(--color-primary-light), -16px 16px 0 2px var(--color-secondary-pink);
+}
+
+.chefs-title {
+  margin: 0 auto 80px;
+  width: 532px;
+}
+
+.chefs-title::after, .chefs-title::before {
+  content: "";
+  display: block;
+  width: 352px;
+  border: 1px solid var(--color-secondary-grey);
+}
+
 .chef-span {
   color: var(--color-brand-dark);
 }
@@ -123,11 +245,29 @@ address {
 .chef-title {
   font-size: 40px;
   font-weight: 600;
+  margin-bottom: 16px;
 }
 
 /* formats section */
-#formats-section {
- background-color: gold;
+.formats-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.format-item {
+  flex-basis: calc((100% - 40px) / 3) ;
+}
+
+.format-card {
+  border-radius: 16px;
+  border: 2px solid black;
+  padding: 24px;
+  background: linear-gradient(rgba(49, 38, 26, 0), rgba(49, 38, 26, .71), rgba(49, 38, 26, 1));
+}
+
+.formats-title {
+  margin-bottom: 80px;
 }
 
 .format-title {
@@ -141,10 +281,44 @@ address {
   font-size: 14px;
   font-weight: 300;
 }
+/* carusel */
+.carusel-btn {
+  width: 44px;
+  height: 44px;
+  background-color: transparent;
+  border: 1px solid var(--color-primary-dark);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.carusel-icon {
+  fill: var(--color-primary-dark);
+}
+
+.carusel-btn:hover {
+  background-color: var(--color-primary-dark);
+  border: none;
+}
+
+.carusel-btn:hover .carusel-icon{
+  fill: var(--color-primary-light);
+}
+
+/* contacts section */
+.contacts-title {
+  margin-bottom: 16px;
+}
 
 /* footer */
-footer{
-  background-color: gold;
+.footer {
+  background-image: url(../images/footer_bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--color-primary-dark);
 }
 
 .address-link {
@@ -152,7 +326,16 @@ footer{
   font-size: 16px;
   font-weight: 300;
 }
-
+.address-link:hover {
+  color: var(--color-brand-normal);
+  
+}
+.address-icon {
+  fill: var(--color-primary-light);
+}
+.address-icon:hover {
+  fill: var(--color-brand-normal);
+}
 .confident-link {
   color: var(--color-primary-light);
   font-size: 16px;
